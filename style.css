@@ -3414,3 +3414,107 @@ ul {
 
 
 }
+
+/* ==========================================
+   LAYOUT REPAIR — DESKTOP, TABLET & MOBILE
+   Add this at the VERY END of style.css
+========================================== */
+
+/* Prevent grid items from becoming too narrow */
+.education-card,
+.education-details,
+.about-grid,
+.hero-content {
+    min-width: 0;
+}
+
+.education-card {
+    display: grid;
+    grid-template-columns: 20px 170px minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 28px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.education-details {
+    width: 100%;
+    min-width: 0;
+}
+
+.education-details h3,
+.education-details h4,
+.education-details p {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.education-status {
+    white-space: nowrap;
+}
+
+/* About section */
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 60px;
+    align-items: start;
+}
+
+.about-copy,
+.about-heading {
+    min-width: 0;
+}
+
+/* Hero section */
+.hero-content {
+    width: 100%;
+    min-width: 0;
+}
+
+.hero-title {
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+/* Tablet */
+@media (max-width: 950px) {
+    .education-card {
+        grid-template-columns: 15px 130px minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .education-status {
+        grid-column: 3;
+        justify-self: start;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .education-card {
+        grid-template-columns: 14px minmax(0, 1fr);
+        gap: 14px;
+        padding: 24px 20px;
+    }
+
+    .education-year,
+    .education-details,
+    .education-status {
+        grid-column: 2;
+    }
+
+    .education-timeline {
+        grid-column: 1;
+        grid-row: 1 / 4;
+    }
+
+    .education-status {
+        justify-self: start;
+    }
+}
