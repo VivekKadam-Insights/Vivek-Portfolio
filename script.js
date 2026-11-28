@@ -1,167 +1,274 @@
 
-(() => {
-  "use strict";
+/* ==========================================
+   VIVEK KADAM — PORTFOLIO INTERACTIONS
+========================================== */
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+document.addEventListener("DOMContentLoaded", () => {
+
+    "use strict";
 
     const progress = document.getElementById("scroll-progress");
-    const backTop = document.querySelector(".back-top");
-    const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav");
-    const year = document.querySelector(".footer-year");
+    const backTop = document.getElementById("back-top");
+    const menuToggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav");
+    const year = document.getElementById("year");
 
-    // Copyright year
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+    /* --------------------------------------
+       CURRENT YEAR
+    -------------------------------------- */
+
     if (year) {
-      year.textContent = new Date().getFullYear();
+        year.textContent = new Date().getFullYear();
     }
 
-    // Scroll progress
-    let scrollQueued = false;
 
-    function updateScrollUI() {
-      const maxScroll =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
+    /* --------------------------------------
+       SCROLL PROGRESS & BACK TO TOP
+    -------------------------------------- */
 
-      const ratio =
-        maxScroll > 0 ? window.scrollY / maxScroll : 0;
+    let scrollTicking = false;
 
-      if (progress) {
-        progress.style.width =
-          `${Math.max(0, Math.min(100, ratio * 100))}%`;
-      }
+    function updateScrollElements() {
 
-      if (backTop) {
-        backTop.classList.toggle(
-          "visible",
-          window.scrollY > 450
-        );
-      }
+        const scrollTop =
+            window.scrollY || document.documentElement.scrollTop;
 
-      scrollQueued = false;
-    }
+        const scrollHeight =
+            document.documentElement.scrollHeight -
+            window.innerHeight;
 
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (!scrollQueued) {
-          scrollQueued = true;
-          requestAnimationFrame(updateScrollUI);
+        const percentage = scrollHeight > 0
+            ? (scrollTop / scrollHeight) * 100
+            : 0;
+
+        if (progress) {
+            progress.style.width = `${percentage}%`;
         }
-      },
-      { passive: true }
-    );
 
-    window.addEventListener("resize", updateScrollUI);
-    updateScrollUI();
-
-    // Scroll reveal
-    const revealElements = document.querySelectorAll(
-      ".reveal"
-    );
-
-    if (
-      !reduceMotion &&
-      "IntersectionObserver" in window
-    ) {
-      const observer = new IntersectionObserver(
-        (entries, currentObserver) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("in-view");
-              currentObserver.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.12,
-          rootMargin: "0px 0px -35px 0px"
+        if (backTop) {
+            backTop.classList.toggle("visible", scrollTop > 450);
         }
-      );
 
-      revealElements.forEach(element => {
-        observer.observe(element);
-      });
-    } else {
-      revealElements.forEach(element => {
-        element.classList.add("in-view");
-      });
+        scrollTicking = false;
     }
 
-    // Mobile menu
+    window.addEventListener("scroll", () => {
+
+        if (!scrollTicking) {
+            window.requestAnimationFrame(updateScrollElements);
+            scrollTicking = true;
+        }
+
+    }, { passive: true });
+
+    updateScrollElements();
+
+
+    /* --------------------------------------
+       MOBILE NAVIGATION
+    -------------------------------------- */
+
+    function closeMenu() {
+
+        if (!menuToggle || !nav) return;
+
+        nav.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+    }
+
     if (menuToggle && nav) {
-      menuToggle.addEventListener("click", () => {
-        const opened = nav.classList.toggle("open");
 
-        menuToggle.setAttribute(
-          "aria-expanded",
-          String(opened)
-        );
+        menuToggle.addEventListener("click", () => {
 
-        menuToggle.setAttribute(
-          "aria-label",
-          opened ? "Close navigation" : "Open navigation"
-        );
-      });
+            const isOpen =
+                menuToggle.getAttribute("aria-expanded") === "true";
 
-      nav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          nav.classList.remove("open");
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
 
-          menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-          );
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Open navigation" : "Close navigation"
+            );
 
-          menuToggle.setAttribute(
-            "aria-label",
-            "Open navigation"
-          );
+            nav.classList.toggle("open", !isOpen);
+
         });
-      });
+
+        nav.querySelectorAll("a").forEach(link => {
+
+            link.addEventListener("click", closeMenu);
+
+        });
+
+        document.addEventListener("click", event => {
+
+            if (
+                nav.classList.contains("open") &&
+                !nav.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+                closeMenu();
+            }
+
+        });
+
+        document.addEventListener("keydown", event => {
+
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+
+        });
+
+        window.addEventListener("resize", () => {
+
+            if (window.innerWidth > 700) {
+                closeMenu();
+            }
+
+        });
+
     }
 
-    // Back to top
+
+    /* --------------------------------------
+       BACK TO TOP
+    -------------------------------------- */
+
     if (backTop) {
-      backTop.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: reduceMotion ? "auto" : "smooth"
+
+        backTop.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: reduceMotion ? "auto" : "smooth"
+            });
+
         });
-      });
+
     }
 
-    // Smooth anchor scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener("click", event => {
-        const selector = link.getAttribute("href");
 
-        if (!selector || selector === "#") {
-          return;
-        }
+    /* --------------------------------------
+       REVEAL ON SCROLL
+    -------------------------------------- */
 
-        let target;
+    const revealElements = document.querySelectorAll(".reveal");
 
-        try {
-          target = document.querySelector(selector);
-        } catch {
-          return;
-        }
+    if ("IntersectionObserver" in window && !reduceMotion) {
 
-        if (!target) {
-          return;
-        }
+        const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
 
-        event.preventDefault();
+                entries.forEach(entry => {
 
-        target.scrollIntoView({
-          behavior: reduceMotion ? "auto" : "smooth",
-          block: "start"
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("in-view");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -35px 0px"
+            }
+        );
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
         });
-      });
-    });
-  });
-})();
+
+        // Enable hidden reveal styles only after observer setup.
+        document.documentElement.classList.add("js-ready");
+
+    } else {
+
+        revealElements.forEach(element => {
+            element.classList.add("in-view");
+        });
+
+    }
+
+
+    /* --------------------------------------
+       ACTIVE NAVIGATION LINK
+    -------------------------------------- */
+
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    if ("IntersectionObserver" in window && sections.length) {
+
+        const sectionObserver = new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        const currentId = entry.target.id;
+
+                        navLinks.forEach(link => {
+
+                            const isActive =
+                                link.getAttribute("href") === `#${currentId}`;
+
+                            link.classList.toggle("active", isActive);
+
+                        });
+
+                    }
+
+                });
+
+            },
+            {
+                rootMargin: "-35% 0px -55% 0px",
+                threshold: 0
+            }
+        );
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+    }
+
+
+    /* --------------------------------------
+       IMAGE FALLBACK
+    -------------------------------------- */
+
+    const profileImage = document.querySelector(".profile-image");
+
+    if (profileImage) {
+
+        profileImage.addEventListener("error", () => {
+
+            profileImage.style.opacity = "0.2";
+            profileImage.alt = "Profile image unavailable";
+
+            console.error(
+                "Profile image not found. Check assets/profile.jpg"
+            );
+
+        }, { once: true });
+
+    }
+
+});
