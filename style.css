@@ -1494,3 +1494,285 @@ span {
         transition: none;
     }
 }
+
+/* ==========================================
+   ADVANCED TYPOGRAPHY & TEXT DESIGN
+   PREMIUM EDITORIAL PORTFOLIO
+========================================== */
+
+/* 1. Premium Text Selection */
+::selection {
+    background: rgba(244, 162, 97, 0.35);
+    color: #ffffff;
+}
+
+
+/* 2. Advanced Hero Typography */
+
+.hero-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.075em;
+    color: #f3f0e9;
+    text-wrap: balance;
+}
+
+/* Elegant Gradient Text */
+
+.hero-title span {
+    background: linear-gradient(
+        115deg,
+        #f4a261 0%,
+        #ffd1a1 45%,
+        #f4a261 75%,
+        #e76f51 100%
+    );
+
+    background-size: 220% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: premiumTextFlow 8s ease-in-out infinite;
+}
+
+@keyframes premiumTextFlow {
+    0%, 100% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+}
+
+
+/* 3. Premium Section Headings */
+
+.section-heading h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.065em;
+    color: #f3f0e9;
+    text-wrap: balance;
+}
+
+
+/* 4. Elegant Eyebrow Text Background */
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 9px 15px;
+
+    border: 1px solid rgba(244, 162, 97, 0.2);
+    border-radius: 100px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(244, 162, 97, 0.09),
+        rgba(244, 162, 97, 0.025)
+    );
+
+    color: #f4a261;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* 5. Premium Text Highlight */
+
+.text-highlight {
+    display: inline-block;
+
+    padding: 0.05em 0.25em;
+
+    color: #ffd1a1;
+
+    background: rgba(244, 162, 97, 0.09);
+
+    border: 1px solid rgba(244, 162, 97, 0.16);
+    border-radius: 6px;
+}
+
+
+/* 6. Advanced Description Typography */
+
+.hero-description,
+.about-intro p,
+.contact-copy p {
+    color: #a2a6af;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(1rem, 1.25vw, 1.15rem);
+
+    line-height: 1.9;
+    letter-spacing: -0.015em;
+}
+
+
+/* 7. Elegant Number Backgrounds */
+
+.skill-index,
+.placeholder-number {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+
+    color: #f4a261;
+
+    background: rgba(244, 162, 97, 0.08);
+
+    border: 1px solid rgba(244, 162, 97, 0.16);
+    border-radius: 8px;
+
+    padding: 7px 11px;
+}
+
+
+/* 8. Premium Skill Labels */
+
+.skill-level,
+.edu-tag {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 12px;
+
+    border-radius: 100px;
+
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #a2a6af;
+
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+
+/* 9. Advanced Card Text Hover */
+
+.skill-card h3,
+.education-card h3,
+.principle-item h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.skill-card:hover h3 {
+    color: #ffd1a1;
+    transform: translateX(4px);
+}
+
+
+/* 10. Premium Contact Link Text */
+
+.contact-links a strong {
+    color: #f3f0e9;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+
+    letter-spacing: -0.025em;
+
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+.contact-links a:hover strong {
+    color: #f4a261;
+    letter-spacing: 0;
+}
+
+
+/* 11. Glass Background for Learning Strip */
+
+.learning-strip {
+    background: linear-gradient(
+        110deg,
+        rgba(244, 162, 97, 0.07),
+        rgba(255, 255, 255, 0.015)
+    );
+
+    border: 1px solid rgba(244, 162, 97, 0.12);
+    border-radius: 14px;
+
+    padding: 18px 24px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* 12. Premium Project Text */
+
+.work-placeholder h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+}
+
+.work-placeholder p {
+    color: #a2a6af;
+    line-height: 1.8;
+}
+
+
+/* 13. Responsive Typography */
+
+@media (max-width: 680px) {
+
+    .hero-title {
+        font-size: clamp(3rem, 13vw, 5rem);
+        letter-spacing: -0.065em;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(2.3rem, 10vw, 3.8rem);
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+}
+
+
+/* 14. Accessibility: Reduce Motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-title span {
+        animation: none;
+    }
+
+    .skill-card h3,
+    .contact-links a strong {
+        transition: none;
+    }
+
+}
