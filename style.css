@@ -1405,3 +1405,92 @@ button {
         transform: none !important;
     }
 }
+
+/* ==========================================
+   PREMIUM TYPOGRAPHY & CIRCULAR PROFILE
+========================================== */
+
+/* Professional Font System */
+:root {
+    --font: "DM Sans", sans-serif;
+}
+
+/* Elegant Headings */
+h1,
+h2,
+h3,
+.hero-title,
+.section-heading,
+.brand {
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.045em;
+}
+
+/* Clean Body Typography */
+body,
+p,
+a,
+button,
+span {
+    font-family: "DM Sans", sans-serif;
+}
+
+/* Refined Hero Title */
+.hero-title {
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.055em;
+}
+
+/* Premium Section Headings */
+.section-heading {
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+/* ==========================================
+   CIRCULAR PROFILE PHOTO
+========================================== */
+
+/* Circular portrait frame */
+.portrait-frame {
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    position: relative;
+}
+
+/* Actual profile image */
+.portrait-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    transition: transform 0.7s ease;
+}
+
+/* Elegant hover zoom */
+.portrait-frame:hover img {
+    transform: scale(1.07);
+}
+
+/* Keep circular shape on mobile */
+@media (max-width: 680px) {
+    .portrait-frame {
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .portrait-frame img {
+        border-radius: 50%;
+    }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .portrait-frame img {
+        transition: none;
+    }
+}
