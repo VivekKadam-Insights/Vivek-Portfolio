@@ -1,652 +1,458 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070914">
+    <meta name="description" content="Vivek Kadam — Aspiring Data Analyst passionate about SQL, Python, Excel, Power BI and business intelligence.">
 
-    <meta name="description"
-        content="Vivek Kadam — Aspiring Data Analyst specializing in SQL, Python, Excel and Power BI.">
+    <title>Vivek Kadam | Data Analyst</title>
 
-    <meta name="theme-color" content="#090b10">
-
-    <title>Vivek Kadam | Data Analyst Portfolio</title>
-
-    <!-- Premium Typography -->
+    <!-- Premium fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- Scroll Progress -->
+    <!-- Background effects -->
+    <div class="background-grid" aria-hidden="true"></div>
+    <div class="ambient ambient-blue" aria-hidden="true"></div>
+    <div class="ambient ambient-purple" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Scroll progress -->
     <div class="progress-track">
         <span id="scroll-progress"></span>
     </div>
 
-    <!-- Ambient Background -->
-    <div class="ambient ambient-one"></div>
-    <div class="ambient ambient-two"></div>
-
-
-    <!-- ======================================
-         NAVIGATION
-    ======================================= -->
-
+    <!-- Navigation -->
     <header class="site-header">
+        <div class="nav-shell">
 
-        <div class="section-shell">
-
-            <a href="#home" class="brand">
-                <span class="brand-mark">
-                    VK<span class="brand-dot">.</span>
-                </span>
-
-                <span>Vivek Kadam</span>
+            <a href="#home" class="brand" aria-label="Vivek Kadam home">
+                <span class="brand-symbol">V<span>K</span></span>
+                <span class="brand-name">VIVEK KADAM<span>.</span></span>
             </a>
 
-            <button
-                class="menu-toggle"
-                id="menu-toggle"
-                type="button"
-                aria-label="Toggle navigation"
+            <button class="menu-toggle" id="menu-toggle"
+                type="button" aria-label="Open navigation"
                 aria-expanded="false">
-
                 <span></span>
                 <span></span>
-
             </button>
 
             <nav class="nav" id="nav">
-
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-
-                <a href="#contact" class="nav-contact">
-                    Contact
-                </a>
-
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-cta">Let's Talk <span>↗</span></a>
             </nav>
 
         </div>
-
     </header>
-
 
     <main>
 
-        <!-- ======================================
-             HERO SECTION
-        ======================================= -->
+        <!-- HERO -->
+        <section class="hero" id="home">
 
-        <section class="hero section-shell" id="home">
+            <div class="hero-content">
 
-            <div class="hero-copy reveal">
-
-                <div class="eyebrow">
-                    <span class="status-dot"></span>
-                    ASPIRING DATA ANALYST
+                <div class="availability-pill reveal">
+                    <span class="availability-dot"></span>
+                    <span>ASPIRING DATA ANALYST</span>
+                    <span class="pill-divider"></span>
+                    <span class="pill-location">INDIA</span>
                 </div>
 
-                <h1 class="hero-title">
-                    Turning data<br>
-                    into <span>decisions.</span>
-                </h1>
-
-                <p class="hero-description">
-                    I'm Vivek Kadam, a Computer Science graduate
-                    passionate about transforming raw data into
-                    <span class="text-highlight">meaningful insights</span>
-                    through analytical thinking, visualization,
-                    and technology.
-                </p>
-
-                <div class="hero-actions">
-
-                    <a href="#projects" class="button button-primary">
-                        Explore My Work
-                    </a>
-
-                    <a href="#contact" class="button button-quiet">
-                        Let's Connect
-                    </a>
-
-                </div>
-
-                <div class="hero-meta">
-
-                    <div class="meta-line">
-                        <span>Based in</span>
-                        <strong>India</strong>
-                    </div>
-
-                    <div class="meta-line">
-                        <span>Professional Focus</span>
-                        <strong>Data Analytics</strong>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Circular Profile Photo -->
-
-            <div class="hero-visual reveal">
-
-                <div class="portrait-frame">
+                <!-- Circular profile photo -->
+                <div class="hero-profile reveal">
+                    <div class="profile-orbit orbit-one"></div>
+                    <div class="profile-orbit orbit-two"></div>
+                    <div class="profile-glow"></div>
 
                     <img
                         src="assets/profile.jpg"
-                        alt="Portrait of Vivek Kadam"
-                        loading="eager">
-
+                        alt="Vivek Kadam profile photograph"
+                        class="profile-image">
                 </div>
 
-                <div class="orbit orbit-large"></div>
-                <div class="orbit orbit-small"></div>
+                <p class="hero-pretitle reveal">HELLO, I'M</p>
 
-                <div class="visual-label label-top">
-                    <span>ANALYTICS</span>
+                <h1 class="hero-title reveal">
+                    Vivek <span>Kadam</span><span class="title-period">.</span>
+                </h1>
+
+                <div class="hero-role reveal">
+                    <span class="role-line"></span>
+                    <span>DATA ANALYST</span>
+                    <span class="role-separator">/</span>
+                    <span>BUSINESS INTELLIGENCE</span>
+                    <span class="role-line"></span>
                 </div>
 
-                <div class="visual-label label-bottom">
-                    <span>INSIGHTS</span>
+                <p class="hero-description reveal">
+                    Transforming complex data into
+                    <span class="gradient-text">meaningful insights</span>
+                    and smarter decisions through analytical thinking,
+                    visualization and technology.
+                </p>
+
+                <div class="hero-actions reveal">
+                    <a href="#projects" class="button button-primary">
+                        Explore My Work <span>↗</span>
+                    </a>
+
+                    <a href="#contact" class="button button-secondary">
+                        Get In Touch <span>→</span>
+                    </a>
                 </div>
 
-                <div class="visual-note">
+                <!-- Floating skill badges -->
+                <div class="hero-tech" aria-label="Technology skills">
+                    <div class="tech-badge tech-sql">
+                        <span class="tech-icon">SQL</span>
+                        <span>SQL</span>
+                    </div>
 
-                    <span class="note-kicker">
-                        CURRENTLY EXPLORING
-                    </span>
+                    <div class="tech-badge tech-python">
+                        <span class="tech-icon">Py</span>
+                        <span>Python</span>
+                    </div>
 
-                    <strong>
-                        Data-driven<br>
-                        problem solving
-                    </strong>
+                    <div class="tech-badge tech-excel">
+                        <span class="tech-icon">X</span>
+                        <span>Excel</span>
+                    </div>
 
+                    <div class="tech-badge tech-powerbi">
+                        <span class="tech-icon">BI</span>
+                        <span>Power BI</span>
+                    </div>
                 </div>
+
+                <a href="#about" class="scroll-indicator">
+                    <span class="scroll-mouse"><span></span></span>
+                    <span>SCROLL TO EXPLORE</span>
+                </a>
 
             </div>
-
-
-            <!-- Scroll Cue -->
-
-            <a href="#about" class="scroll-cue">
-
-                <span class="scroll-cue-line"></span>
-                <span>SCROLL TO EXPLORE</span>
-
-            </a>
-
         </section>
 
 
-        <!-- ======================================
-             ABOUT SECTION
-        ======================================= -->
+        <!-- ABOUT -->
+        <section class="section section-shell" id="about">
 
-        <section class="section-block section-shell" id="about">
+            <div class="section-top reveal">
+                <span class="section-index">01 / ABOUT ME</span>
+                <span class="section-line"></span>
+                <span class="section-caption">GET TO KNOW ME</span>
+            </div>
 
-            <div class="section-heading reveal">
+            <div class="about-grid">
 
-                <span class="eyebrow">01 / ABOUT</span>
+                <div class="about-heading reveal">
+                    <p class="small-label">MY INTRODUCTION</p>
+                    <h2>
+                        Curious mind.<br>
+                        <span class="gradient-text">Analytical vision.</span>
+                    </h2>
+                </div>
 
-                <h2>
-                    Curious by nature.<br>
-                    <span class="text-highlight">
-                        Analytical by mindset.
-                    </span>
-                </h2>
+                <div class="about-copy reveal">
+                    <p>
+                        I am a B.Sc. Computer Science graduate with a
+                        strong interest in data analytics and business
+                        intelligence.
+                    </p>
+
+                    <p>
+                        I enjoy exploring datasets, identifying patterns
+                        and turning information into clear, useful insights.
+                        I am building my capabilities in SQL, Python,
+                        Microsoft Excel and Power BI.
+                    </p>
+
+                    <p>
+                        My goal is to grow as a data professional by
+                        combining technical knowledge, curiosity and
+                        practical problem-solving.
+                    </p>
+
+                    <a href="#skills" class="text-link">
+                        Discover my skills <span>↗</span>
+                    </a>
+                </div>
 
             </div>
 
-
-            <div class="about-layout">
-
-                <div class="about-intro reveal">
-
-                    <p>
-                        I am a B.Sc. Computer Science graduate
-                        with a strong interest in
-                        <span class="text-highlight">
-                            data analytics
-                        </span>
-                        and business intelligence.
-                    </p>
-
-                    <p>
-                        My goal is to understand complex data,
-                        identify meaningful patterns, and communicate
-                        insights that support better decisions.
-                    </p>
-
-                    <p>
-                        I continuously develop my technical skills
-                        through learning, experimentation, and
-                        practical analytical work.
-                    </p>
-
+            <div class="about-stats reveal">
+                <div class="stat-item">
+                    <span class="stat-number">04</span>
+                    <span class="stat-label">CORE TOOLS</span>
                 </div>
 
-
-                <div class="principles reveal">
-
-                    <div class="principle-item">
-
-                        <span>01</span>
-
-                        <div>
-                            <h3>
-                                Analytical Thinking
-                            </h3>
-
-                            <p>
-                                Breaking down problems and
-                                discovering meaningful patterns.
-                            </p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="principle-item">
-
-                        <span>02</span>
-
-                        <div>
-                            <h3>
-                                Continuous Learning
-                            </h3>
-
-                            <p>
-                                Building knowledge through
-                                consistent practice and curiosity.
-                            </p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="principle-item">
-
-                        <span>03</span>
-
-                        <div>
-                            <h3>
-                                Meaningful Insights
-                            </h3>
-
-                            <p>
-                                Turning information into
-                                clear and useful conclusions.
-                            </p>
-                        </div>
-
-                    </div>
-
+                <div class="stat-item">
+                    <span class="stat-number">2026</span>
+                    <span class="stat-label">GRADUATION YEAR</span>
                 </div>
 
+                <div class="stat-item">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">LEARNING MINDSET</span>
+                </div>
             </div>
 
         </section>
 
 
-        <!-- ======================================
-             EDUCATION SECTION
-        ======================================= -->
+        <!-- EDUCATION -->
+        <section class="section section-shell" id="education">
 
-        <section class="section-block section-shell" id="education">
-
-            <div class="section-heading reveal">
-
-                <span class="eyebrow">02 / EDUCATION</span>
-
-                <h2>
-                    Foundation built<br>
-                    through <span class="text-highlight">
-                        learning.
-                    </span>
-                </h2>
-
+            <div class="section-top reveal">
+                <span class="section-index">02 / EDUCATION</span>
+                <span class="section-line"></span>
+                <span class="section-caption">MY ACADEMIC JOURNEY</span>
             </div>
 
+            <div class="section-heading reveal">
+                <p class="small-label">LEARNING FOUNDATION</p>
+                <h2>Education & <span class="gradient-text">Growth.</span></h2>
+                <p class="section-description">
+                    The academic foundation behind my journey into technology
+                    and data analytics.
+                </p>
+            </div>
 
-            <div class="education-card reveal">
+            <article class="education-card reveal">
 
-                <div class="edu-year">
-                    2023 — 2026
+                <div class="education-timeline">
+                    <span class="timeline-dot"></span>
+                    <span class="timeline-line"></span>
                 </div>
 
-                <div class="edu-main">
+                <div class="education-year">2023 — 2026</div>
 
-                    <h3>
-                        Bachelor of Science
-                    </h3>
-
-                    <p class="edu-secondary">
-                        Computer Science
-                    </p>
+                <div class="education-details">
+                    <span class="card-kicker">UNDERGRADUATE DEGREE</span>
+                    <h3>Bachelor of Science</h3>
+                    <h4>Computer Science</h4>
 
                     <p>
-                        Vidya Pratishthan's Arts, Science and
-                        Commerce College, Baramati
+                        Vidya Pratishthan's Arts, Science and Commerce
+                        College, Baramati
                     </p>
 
-                    <p class="edu-secondary">
+                    <p class="university">
                         Savitribai Phule Pune University
                     </p>
-
                 </div>
 
-                <div class="edu-tag">
+                <div class="education-status">
+                    <span class="status-check">✓</span>
                     GRADUATED
                 </div>
 
-            </div>
+            </article>
 
         </section>
 
 
-        <!-- ======================================
-             SKILLS SECTION
-        ======================================= -->
+        <!-- SKILLS -->
+        <section class="section section-shell" id="skills">
 
-        <section class="section-block section-shell" id="skills">
-
-            <div class="section-heading reveal">
-
-                <span class="eyebrow">03 / SKILLS</span>
-
-                <h2>
-                    Tools for turning<br>
-                    <span class="text-highlight">
-                        data into clarity.
-                    </span>
-                </h2>
-
-                <p class="section-subtitle">
-                    Technical skills I am developing and applying
-                    in my data analytics journey.
-                </p>
-
+            <div class="section-top reveal">
+                <span class="section-index">03 / SKILLS</span>
+                <span class="section-line"></span>
+                <span class="section-caption">MY TOOLKIT</span>
             </div>
 
+            <div class="section-heading reveal">
+                <p class="small-label">TECHNICAL EXPERTISE</p>
+                <h2>Tools behind the <span class="gradient-text">insights.</span></h2>
+                <p class="section-description">
+                    Technologies I am learning and developing through
+                    consistent practice.
+                </p>
+            </div>
 
             <div class="skills-grid">
 
-
-                <!-- SQL -->
-
                 <article class="skill-card reveal">
-
-                    <span class="skill-index">01</span>
-
-                    <div class="skill-icon">
-                        SQL
+                    <div class="skill-card-top">
+                        <span class="skill-number">01</span>
+                        <span class="skill-symbol sql-symbol">SQL</span>
                     </div>
-
                     <h3>SQL</h3>
-
-                    <p>
-                        Querying, filtering, and analyzing
-                        structured datasets.
-                    </p>
-
-                    <span class="skill-level">
-                        DEVELOPING
-                    </span>
-
+                    <p>Querying, filtering and exploring structured data.</p>
+                    <span class="skill-tag">DEVELOPING</span>
                 </article>
 
-
-                <!-- Python -->
-
                 <article class="skill-card reveal">
-
-                    <span class="skill-index">02</span>
-
-                    <div class="skill-icon">
-                        PY
+                    <div class="skill-card-top">
+                        <span class="skill-number">02</span>
+                        <span class="skill-symbol python-symbol">Py</span>
                     </div>
-
                     <h3>Python</h3>
-
-                    <p>
-                        Data manipulation, analysis, and
-                        problem-solving fundamentals.
-                    </p>
-
-                    <span class="skill-level">
-                        DEVELOPING
-                    </span>
-
+                    <p>Programming fundamentals and data analysis.</p>
+                    <span class="skill-tag">DEVELOPING</span>
                 </article>
 
-
-                <!-- Excel -->
-
                 <article class="skill-card reveal">
-
-                    <span class="skill-index">03</span>
-
-                    <div class="skill-icon">
-                        XL
+                    <div class="skill-card-top">
+                        <span class="skill-number">03</span>
+                        <span class="skill-symbol excel-symbol">X</span>
                     </div>
-
                     <h3>Microsoft Excel</h3>
-
-                    <p>
-                        Data organization, formulas,
-                        analysis, and reporting.
-                    </p>
-
-                    <span class="skill-level">
-                        INTERMEDIATE
-                    </span>
-
+                    <p>Data organization, formulas and reporting.</p>
+                    <span class="skill-tag">INTERMEDIATE</span>
                 </article>
 
-
-                <!-- Power BI -->
-
                 <article class="skill-card reveal">
-
-                    <span class="skill-index">04</span>
-
-                    <div class="skill-icon">
-                        BI
+                    <div class="skill-card-top">
+                        <span class="skill-number">04</span>
+                        <span class="skill-symbol bi-symbol">BI</span>
                     </div>
-
                     <h3>Power BI</h3>
-
-                    <p>
-                        Interactive dashboards and
-                        data visualization.
-                    </p>
-
-                    <span class="skill-level">
-                        INTERMEDIATE
-                    </span>
-
+                    <p>Data visualization and interactive dashboards.</p>
+                    <span class="skill-tag">INTERMEDIATE</span>
                 </article>
 
             </div>
 
-
-            <div class="learning-strip reveal">
-
-                <span class="learning-marker"></span>
-
-                <p>
-                    Always learning.
-                    <span class="text-highlight">
-                        Always improving.
-                    </span>
-                </p>
-
+            <div class="learning-banner reveal">
+                <span class="learning-icon">✳</span>
+                <div>
+                    <strong>Always learning. Always evolving.</strong>
+                    <p>Building practical skills through continuous exploration.</p>
+                </div>
+                <span class="learning-arrow">↗</span>
             </div>
 
         </section>
 
 
-        <!-- ======================================
-             PROJECTS SECTION
-        ======================================= -->
+        <!-- PROJECTS -->
+        <section class="section section-shell" id="projects">
 
-        <section class="section-block section-shell" id="projects">
-
-            <div class="section-heading reveal">
-
-                <span class="eyebrow">04 / PROJECTS</span>
-
-                <h2>
-                    Learning through<br>
-                    <span class="text-highlight">
-                        practical exploration.
-                    </span>
-                </h2>
-
-                <p class="section-subtitle">
-                    My portfolio is growing as I develop
-                    practical data analytics projects.
-                </p>
-
+            <div class="section-top reveal">
+                <span class="section-index">04 / PROJECTS</span>
+                <span class="section-line"></span>
+                <span class="section-caption">SELECTED WORK</span>
             </div>
 
+            <div class="section-heading reveal">
+                <p class="small-label">PRACTICAL EXPLORATION</p>
+                <h2>From learning to <span class="gradient-text">building.</span></h2>
+                <p class="section-description">
+                    This section will grow as I complete hands-on
+                    data analytics projects.
+                </p>
+            </div>
 
-            <div class="work-placeholder reveal">
+            <article class="project-card reveal">
 
-                <div class="placeholder-symbol">
-                    +
+                <div class="project-visual">
+                    <div class="project-orb orb-a"></div>
+                    <div class="project-orb orb-b"></div>
+                    <div class="project-visual-content">
+                        <span class="project-visual-label">PROJECT 001</span>
+                        <span class="project-plus">+</span>
+                        <span class="project-visual-bottom">COMING INTO FOCUS</span>
+                    </div>
                 </div>
 
-                <span class="placeholder-number">
-                    001
-                </span>
+                <div class="project-info">
+                    <div class="project-info-top">
+                        <span class="card-kicker">CURRENTLY IN PROGRESS</span>
+                        <span class="project-number">01</span>
+                    </div>
 
-                <h3>
-                    First Analytical Project
-                </h3>
+                    <h3>My First Data Analytics Project</h3>
 
-                <p>
-                    Currently developing my practical
-                    project portfolio.
-                </p>
+                    <p>
+                        I am currently developing my practical project
+                        portfolio. Case studies and analytical work
+                        will be added here as they are completed.
+                    </p>
 
-                <span class="skill-level">
-                    PROJECT IN PROGRESS
-                </span>
+                    <span class="project-status">
+                        <span></span> PROJECT IN PROGRESS
+                    </span>
+                </div>
 
-            </div>
+            </article>
 
         </section>
 
 
-        <!-- ======================================
-             CONTACT SECTION
-        ======================================= -->
+        <!-- CONTACT -->
+        <section class="section section-shell" id="contact">
 
-        <section
-            class="section-block section-shell contact"
-            id="contact">
-
-            <div class="section-heading reveal">
-
-                <span class="eyebrow">05 / CONTACT</span>
-
-                <h2>
-                    Let's connect<br>
-                    and <span class="text-highlight">
-                        create value.
-                    </span>
-                </h2>
-
+            <div class="section-top reveal">
+                <span class="section-index">05 / CONTACT</span>
+                <span class="section-line"></span>
+                <span class="section-caption">LET'S CONNECT</span>
             </div>
-
 
             <div class="contact-panel reveal">
 
-                <div class="contact-copy">
+                <div class="contact-main">
+                    <p class="small-label">HAVE AN OPPORTUNITY?</p>
 
-                    <span class="note-kicker">
-                        OPEN TO OPPORTUNITIES
-                    </span>
+                    <h2>
+                        Let's create<br>
+                        something <span class="gradient-text">meaningful.</span>
+                    </h2>
 
-                    <h3>
-                        Interested in data,<br>
-                        ideas, and collaboration.
-                    </h3>
-
-                    <p>
-                        Feel free to reach out for professional
-                        opportunities, conversations, or
-                        collaborations in data analytics.
+                    <p class="contact-description">
+                        Open to professional conversations,
+                        learning opportunities and collaborations
+                        in the field of data analytics.
                     </p>
 
+                    <a href="mailto:vivekkadam485@gmail.com"
+                        class="button button-primary">
+                        Say Hello <span>↗</span>
+                    </a>
                 </div>
 
+                <div class="contact-details">
 
-                <div class="contact-links">
-
-                    <a href="mailto:vivekkadam485@gmail.com">
-
-                        <span>Email</span>
-
-                        <strong>
-                            vivekkadam485@gmail.com
-                        </strong>
-
+                    <a href="mailto:vivekkadam485@gmail.com" class="contact-item">
+                        <span class="contact-label">EMAIL</span>
+                        <span class="contact-value">vivekkadam485@gmail.com</span>
+                        <span class="contact-arrow">↗</span>
                     </a>
 
-
-                    <a href="tel:+917028144737">
-
-                        <span>Phone</span>
-
-                        <strong>
-                            +91 70281 44737
-                        </strong>
-
+                    <a href="tel:+917028144737" class="contact-item">
+                        <span class="contact-label">PHONE</span>
+                        <span class="contact-value">+91 70281 44737</span>
+                        <span class="contact-arrow">↗</span>
                     </a>
 
-
-                    <a
-                        href="https://www.linkedin.com/in/vivekkadam-data"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        <span>LinkedIn</span>
-
-                        <strong>
-                            Connect professionally ↗
-                        </strong>
-
+                    <a href="https://www.linkedin.com/in/vivekkadam-data"
+                        target="_blank" rel="noopener noreferrer"
+                        class="contact-item">
+                        <span class="contact-label">LINKEDIN</span>
+                        <span class="contact-value">Connect professionally</span>
+                        <span class="contact-arrow">↗</span>
                     </a>
 
-
-                    <a
-                        href="https://github.com/VivekKadam-Insights"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        <span>GitHub</span>
-
-                        <strong>
-                            Explore my GitHub ↗
-                        </strong>
-
+                    <a href="https://github.com/VivekKadam-Insights"
+                        target="_blank" rel="noopener noreferrer"
+                        class="contact-item">
+                        <span class="contact-label">GITHUB</span>
+                        <span class="contact-value">Explore my repositories</span>
+                        <span class="contact-arrow">↗</span>
                     </a>
 
                 </div>
@@ -658,43 +464,20 @@
     </main>
 
 
-    <!-- ======================================
-         FOOTER
-    ======================================= -->
-
-    <footer class="site-footer section-shell">
-
-        <a href="#home" class="footer-brand">
-            VK<span class="brand-dot">.</span>
-        </a>
-
-        <p>
-            Designed with curiosity and a passion for data.
-        </p>
-
-        <span class="footer-year">
-            © <span id="year"></span> Vivek Kadam
-        </span>
-
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <a href="#home" class="footer-brand">VK<span>.</span></a>
+            <p>Designed with curiosity. Driven by data.</p>
+            <span>© <span id="year"></span> Vivek Kadam</span>
+        </div>
     </footer>
 
-
-    <!-- Back to Top -->
-
-    <button
-        class="back-top"
-        id="back-top"
-        type="button"
-        aria-label="Back to top">
-
+    <!-- Back to top -->
+    <button class="back-top" id="back-top"
+        type="button" aria-label="Back to top">
         ↑
-
     </button>
 
-
-    <!-- JavaScript -->
-    <script src="script.js" defer></script>
-
 </body>
-
 </html>
